@@ -1,5 +1,5 @@
 import axios from "axios";
-import { atom, selector } from "recoil";
+import { atom, atomFamily, selector, selectorFamily } from "recoil";
 
 export const inputState = atom({
     key: 'inputState', 
@@ -34,7 +34,23 @@ export const itemsState = atom({
     }), 
 });
 
-
-
+export const selectedItemState = atomFamily({
+    key: 'selectedItemState', 
+    default: selectorFamily({
+        key: 'selectedItemSelector',
+        get: (id) => async () => {
+            try{
+                const response = await axios.get(
+                    `https://api.spoonacular.com/recipes/${id}/information?apiKey=36d6b88367b74efe8844f8ba510066d1`
+                );
+                return response.data;
+            }
+            catch(error){
+                console.error("API Request Failed:", error);
+                return {};
+            }
+        },
+    }),
+});
 
 

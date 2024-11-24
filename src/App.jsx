@@ -24,16 +24,17 @@ function App() {
   return (
 
     <div>
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         <RecoilRoot>
-          <InputComponent></InputComponent>
-          <CardComponent></CardComponent>
+          {/* <InputComponent></InputComponent>
+          <CardComponent></CardComponent> */}
+          <RecipePage id = {452116}></RecipePage>
         </RecoilRoot>
 
         {/* <SkeletonComponent></SkeletonComponent> */}
         {/* <CardDemo item={item}></CardDemo> */}
 
-        <RecipePage></RecipePage>
+        
         
     </div>
     
