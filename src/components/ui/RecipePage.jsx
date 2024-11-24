@@ -4,7 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Clock, Users, Heart, DollarSign, Utensils, Wine, ArrowLeft } from 'lucide-react';
 
-const RecipePage = () => {
+const RecipePage = ({id}) => {
+
+  
+
   const nutritionData = [
     { title: "Calories", amount: 250, unit: "kcal" },
     { title: "Fat", amount: 15, unit: "g" },
