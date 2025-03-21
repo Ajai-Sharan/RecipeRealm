@@ -9,7 +9,7 @@ export function CardComponent() {
   function handleLoading() {
     return (
       <div className="flex flex-wrap px-5 justify-evenly">
-        {Array.from({ length: 8 }).map((_, index) => (
+        {Array.from({ length: 10 }).map((_, index) => (
           <SkeletonComponent key={index} />
         ))}
       </div>

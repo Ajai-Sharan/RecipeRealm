@@ -1,11 +1,12 @@
-import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Clock, Users, Heart, DollarSign, Utensils, Wine, ArrowLeft } from 'lucide-react';
+import { Clock, Users, Heart, DollarSign, Utensils, ArrowLeft } from 'lucide-react';
 import { useRecoilValue } from 'recoil';
 import { selectedItemState } from '@/context/atom';
-const RecipePage = ({id}) => {
+import { useParams } from 'react-router-dom';
+const RecipePage = () => {
+  const {id} = useParams()
   const recipe = useRecoilValue(selectedItemState(id));
 
   // Helper function to format price
